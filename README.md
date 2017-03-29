@@ -13,7 +13,7 @@ A library to search Japanese banks and branches for Ruby
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jp-bank'
+gem 'jp-bank', require: 'jp_bank'
 ```
 
 And then execute:
