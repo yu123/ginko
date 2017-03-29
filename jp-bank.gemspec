@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'jp_bank/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'jp_bank'
+  spec.name          = 'jp-bank'
   spec.version       = JpBank::VERSION
   spec.authors       = ['yu123']
   spec.email         = ['yu123.rb@gmail.com']
 
   spec.summary       = 'ruby library for Japanse bank code and branch code'
   spec.description   = 'ruby library for Japanse bank code and branch code'
-  spec.homepage      = 'https://gihub.com/yu123/jp_bank'
+  spec.homepage      = 'https://gihub.com/yu123/jp-bank'
   spec.license       = 'MIT'
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
