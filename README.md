@@ -2,7 +2,7 @@
 
 A library to search Japanese banks and branches for Ruby
 
-[![Build Status](https://travis-ci.org/yu123/jp_bank.png)](https://travis-ci.org/yu123/jp_bank)
+[![Build Status](https://travis-ci.org/yu123/jp-bank.png)](https://travis-ci.org/yu123/jp-bank)
 
 ## Feature
 - comprehensive list of Japanese banks and their branches
@@ -13,7 +13,7 @@ A library to search Japanese banks and branches for Ruby
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jp_bank'
+gem 'jp-bank'
 ```
 
 And then execute:
@@ -22,7 +22,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install jp_bank
+    $ gem install jp-bank
 
 ## Usage
 ### search banks
@@ -30,7 +30,7 @@ Or install it yourself as:
 JpBank::Bank.search('みつい')
 # => [#<JpBank::Bank:0x007fcd9570eb48 @code="0009", @name="三井住友", @name_e="mitsuisumitomo", @name_h="みついすみとも", @name_k="ミツイスミトモ">,
  #<JpBank::Bank:0x007fcd9570ead0 @code="0294", @name="三井住友信託", @name_e="mitsuisumitomoshintaku", @name_h="みついすみともしんたく", @name_k="ミツイスミトモシンタク">,
- #<JpBank::Bank:0x007fcd9570eaa8 @code="3126", @name="みついし農協", @name_e="mitsuishinoukiyou", @name_h="みついしのうきよう", @name_k="ミツイシノウキヨウ">] 
+ #<JpBank::Bank:0x007fcd9570eaa8 @code="3126", @name="みついし農協", @name_e="mitsuishinoukiyou", @name_h="みついしのうきよう", @name_k="ミツイシノウキヨウ">]
 
 ```
 
@@ -55,10 +55,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/yu123/jp_bank. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/yu123/jp-bank. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
