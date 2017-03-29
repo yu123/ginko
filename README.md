@@ -1,8 +1,12 @@
 # JpBank
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jp_bank`. To experiment with that code, run `bin/console` for an interactive prompt.
+A library to search Japanese banks and branches for Ruby
 
-TODO: Delete this and the text above, and describe your gem
+[![Build Status](https://travis-ci.org/yu123/jp_bank.png)](https://travis-ci.org/yu123/jp_bank)
+
+## Feature
+- comprehensive list of Japanese banks and their branches
+
 
 ## Installation
 
@@ -21,8 +25,27 @@ Or install it yourself as:
     $ gem install jp_bank
 
 ## Usage
+### search banks
+```ruby
+JpBank::Bank.search('みつい')
+# => [#<JpBank::Bank:0x007fcd9570eb48 @code="0009", @name="三井住友", @name_e="mitsuisumitomo", @name_h="みついすみとも", @name_k="ミツイスミトモ">,
+ #<JpBank::Bank:0x007fcd9570ead0 @code="0294", @name="三井住友信託", @name_e="mitsuisumitomoshintaku", @name_h="みついすみともしんたく", @name_k="ミツイスミトモシンタク">,
+ #<JpBank::Bank:0x007fcd9570eaa8 @code="3126", @name="みついし農協", @name_e="mitsuishinoukiyou", @name_h="みついしのうきよう", @name_k="ミツイシノウキヨウ">] 
 
-TODO: Write usage instructions here
+```
+
+### find bank
+```ruby
+JpBank::Bank.find('9900')
+# => #<JpBank::Bank:0x007fcd956954c8 @code="9900", @name="ゆうちょ", @name_e="yuuchiyo", @name_h="ゆうちよ", @name_k="ユウチヨ">
+```
+
+### search branches
+```ruby
+bank = JpBank::Bank.find('0009')
+bank.branches.search('新宿')
+# => [{"code"=>"221", "name"=>"新宿", "name_k"=>"シンジユク", "name_h"=>"しんじゆく", "name_e"=>"shinjiyuku"},{"code"=>"259", "name"=>"新宿西口", "name_k"=>"シンジユクニシグチ", "name_h"=>"しんじゆくにしぐち", "name_e"=>"shinjiyukunishiguchi"},{"code"=>"661", "name"=>"新宿通", "name_k"=>"シンジユクドオリ", "name_h"=>"しんじゆくどおり", "name_e"=>"shinjiyukudoori"}]
+```
 
 ## Development
 
