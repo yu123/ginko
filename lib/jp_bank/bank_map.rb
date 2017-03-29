@@ -8,8 +8,8 @@ module JpBank
       @@data
     end
 
-    def self.search(query:, limit: 10)
-      result = Filter.filter_with_query(data, query, limit)
+    def self.search(query, options)
+      result = Filter.filter_with_query(data, query, options)
       result.map{ |r| Bank.new(r) }
     end
 

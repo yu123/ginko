@@ -17,8 +17,8 @@ RSpec.describe JpBank::BranchMap do
 
   describe '#search' do
     let(:bank) { JpBank::Bank.find('0009') }
-    subject { bank.branches.search(query: query, limit: limit) }
-    let(:limit) { 10 }
+    subject { bank.branches.search(query, options) }
+    let(:options) { { limit: 10 } }
     context 'with query' do
       let(:query) { '本' }
       it { is_expected.to be_a_kind_of(Array) }
@@ -34,7 +34,7 @@ RSpec.describe JpBank::BranchMap do
       end
 
       context 'with limit option' do
-        let(:limit) { 1 }
+        let(:options) { { limit: 1 } }
         it 'returns array with 1 item' do
           expect(subject.size).to eq(1)
         end

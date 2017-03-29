@@ -1,6 +1,7 @@
 module JpBank
   module Filter
-    def self.filter_with_query(data, query, limit=10)
+    def self.filter_with_query(data, query, options)
+      limit = options[:limit] || 10
       data[0,limit] if query.nil? || query.empty?
       query = /\A#{query}/
       result = []

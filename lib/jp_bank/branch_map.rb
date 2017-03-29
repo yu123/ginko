@@ -11,8 +11,8 @@ module JpBank
       @data
     end
 
-    def search(query:, limit: 10)
-      result = Filter.filter_with_query(@data, query, limit)
+    def search(query, options={})
+      result = Filter.filter_with_query(@data, query, options)
     end
 
     private

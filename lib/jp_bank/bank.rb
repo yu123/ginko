@@ -30,8 +30,8 @@ module JpBank
       to_h.to_json
     end
 
-    def self.search(query:, limit: 10)
-      BankMap.search(query: query, limit: limit)
+    def self.search(query, options)
+      BankMap.search(query, options)
     end
 
     def self.find(code)
