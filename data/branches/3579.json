@@ -1,1 +1,1 @@
-[{"code":"001","name":"本店","name_k":"ホンテン","name_h":"ほんてん","name_e":"honten"},{"code":"002","name":"岩谷堂","name_k":"イワヤドウ","name_h":"いわやどう","name_e":"iwayadou"},{"code":"012","name":"玉里","name_k":"タマサト","name_h":"たまさと","name_e":"tamasato"}]
+[{"bank_code":"3579","code":"001","name":"本店","name_k":"ホンテン","name_h":"ほんてん","name_e":"honten"},{"bank_code":"3579","code":"002","name":"岩谷堂","name_k":"イワヤドウ","name_h":"いわやどう","name_e":"iwayadou"},{"bank_code":"3579","code":"012","name":"玉里","name_k":"タマサト","name_h":"たまさと","name_e":"tamasato"}]
