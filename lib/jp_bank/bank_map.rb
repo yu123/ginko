@@ -1,21 +1,32 @@
 require 'json'
-
+require 'jp_bank/name_query'
 module JpBank
   class BankMap
+    include NameQuery
     load_path = File.join(File.dirname(__FILE__), '../../data/banks.json')
     @@data = JSON.parse(File.read(load_path)).freeze
-    def self.data
+
+    def initialize
+      @result = {}
+    end
+
+    def find_by(k, v)
+      bank_data = data.select {|bank| bank[k] == v }.first || {}
+      bank_data.empty? ? nil : Bank.new(bank_data)
+    end
+
+    private
+
+    def item_klass
+      Bank
+    end
+
+    def data
       @@data
     end
 
-    def self.search(query, options)
-      result = Filter.filter_with_query(data, query, options)
-      result.map{ |r| Bank.new(r) }
-    end
-
-    def self.find_by(k, v)
-      bank_data = data.select {|bank| bank[k] == v }.first || {}
-      bank_data.empty? ? nil : Bank.new(bank_data)
+    def result
+      @result
     end
   end
 end

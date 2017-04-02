@@ -22,9 +22,8 @@ RSpec.describe JpBank::Bank do
     end
 
     describe '#search' do
-      subject { described_class.search(query, options) }
-      let(:options) { { limit: 10 } }
       context 'with query' do
+        subject { described_class.search(query) }
         let(:query) { '三井住友' }
         it { is_expected.to be_a_kind_of(Array) }
         it 'contains query' do
@@ -34,6 +33,7 @@ RSpec.describe JpBank::Bank do
         end
 
         context 'with limit option' do
+          subject { described_class.search(query, options) }
           let(:options) { { limit: 1 } }
           it 'returns array with 1 item' do
             expect(subject.size).to eq(1)
@@ -43,6 +43,7 @@ RSpec.describe JpBank::Bank do
       end
 
       context 'without query' do
+        subject { described_class.search(query) }
         let(:query) { '' }
         it { is_expected.to be_a_kind_of(Array) }
         it 'contains 10 results' do
@@ -64,7 +65,7 @@ RSpec.describe JpBank::Bank do
     end
   end
 
-  describe '#branch_search' do
+  describe '#branches' do
     let(:bank) { JpBank::Bank.find('0009') }
     subject { bank.branches }
     context 'with query' do
