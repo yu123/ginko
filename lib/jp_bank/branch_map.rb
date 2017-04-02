@@ -1,18 +1,17 @@
 require 'json'
-require 'jp_bank/filter'
+require 'jp_bank/name_query'
+require 'jp_bank/branch'
 module JpBank
   class BranchMap
+    include NameQuery
     def initialize(bank_code)
       @bank_code = bank_code
       @data = load_data
+      @result = {}
     end
 
     def all
       @data
-    end
-
-    def search(query, options={})
-      result = Filter.filter_with_query(@data, query, options)
     end
 
     private
@@ -25,6 +24,18 @@ module JpBank
 
     def load_path
       File.join(File.dirname(__FILE__), "../../data/branches/#{@bank_code}.json")
+    end
+
+    def item_klass
+      Branch
+    end
+
+    def data
+      @data
+    end
+
+    def result
+      @result
     end
   end
 end
