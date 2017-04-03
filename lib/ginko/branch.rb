@@ -3,7 +3,7 @@ require 'ginko/bank_map'
 require 'ginko/branch_map'
 module Ginko
   class Branch
-    attr_reader :name, :name_e, :name_h, :name_k, :name_kana, :code, :bank_code
+    attr_reader :name, :name_e, :name_h, :name_k, :name_kana, :code, :bank_code, :routing_number
     def initialize(branch_hash={})
       @bank_code = branch_hash['bank_code']
       @code = branch_hash['code']
