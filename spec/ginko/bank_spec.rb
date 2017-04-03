@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-RSpec.describe JpBank::Bank do
+RSpec.describe Ginko::Bank do
   describe 'class_methods' do
     describe '#find' do
       subject { described_class.find(code) }
       context 'when a bank exists' do
         let(:code) { '0001' }
         it {
-          is_expected.to be_a_kind_of(JpBank::Bank)
+          is_expected.to be_a_kind_of(Ginko::Bank)
           expect(subject.name).to eq('みずほ')
           expect(subject.name_k).to eq('ミズホ')
           expect(subject.name_h).to eq('みずほ')
@@ -22,9 +22,8 @@ RSpec.describe JpBank::Bank do
     end
 
     describe '#search' do
-      subject { described_class.search(query, options) }
-      let(:options) { { limit: 10 } }
       context 'with query' do
+        subject { described_class.search(query) }
         let(:query) { '三井住友' }
         it { is_expected.to be_a_kind_of(Array) }
         it 'contains query' do
@@ -34,6 +33,7 @@ RSpec.describe JpBank::Bank do
         end
 
         context 'with limit option' do
+          subject { described_class.search(query, options) }
           let(:options) { { limit: 1 } }
           it 'returns array with 1 item' do
             expect(subject.size).to eq(1)
@@ -43,11 +43,12 @@ RSpec.describe JpBank::Bank do
       end
 
       context 'without query' do
+        subject { described_class.search(query) }
         let(:query) { '' }
         it { is_expected.to be_a_kind_of(Array) }
         it 'contains 10 results' do
           expect(subject.size).to eq(10)
-          expect(subject.first).to be_a_kind_of(JpBank::Bank)
+          expect(subject.first).to be_a_kind_of(Ginko::Bank)
         end
       end
     end
@@ -55,7 +56,7 @@ RSpec.describe JpBank::Bank do
 
   describe 'attributes' do
     context 'valid bank' do
-      let(:bank) { JpBank::Bank.find('0009') }
+      let(:bank) { Ginko::Bank.find('0009') }
       it { expect(bank.code).to eq('0009') }
       it { expect(bank.name).to eq('三井住友') }
       it { expect(bank.name_h).to eq('みついすみとも') }
@@ -64,16 +65,16 @@ RSpec.describe JpBank::Bank do
     end
   end
 
-  describe '#branch_search' do
-    let(:bank) { JpBank::Bank.find('0009') }
+  describe '#branches' do
+    let(:bank) { Ginko::Bank.find('0009') }
     subject { bank.branches }
     context 'with query' do
-      it { is_expected.to be_a_kind_of(JpBank::BranchMap)}
+      it { is_expected.to be_a_kind_of(Ginko::BranchMap)}
     end
   end
 
   describe '#to_h' do
-    let(:bank) { JpBank::Bank.find('0009') }
+    let(:bank) { Ginko::Bank.find('0009') }
     subject { bank.to_h }
     it { is_expected.to eq({
         code: bank.code,
@@ -86,7 +87,7 @@ RSpec.describe JpBank::Bank do
   end
 
   describe '#to_json' do
-    let(:bank) { JpBank::Bank.find('0009') }
+    let(:bank) { Ginko::Bank.find('0009') }
     it { expect(bank.to_json).to eql({
         code: bank.code,
         name: bank.name,

@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "jp_bank"
+require "ginko"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

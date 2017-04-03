@@ -1,1 +1,1 @@
-[{"code":"001","name":"東京","name_k":"トウキヨウ","name_h":"とうきよう","name_e":"toukiyou"},{"code":"002","name":"大阪","name_k":"オオサカ","name_h":"おおさか","name_e":"oosaka"},{"code":"003","name":"福岡出張所","name_k":"フクオカ","name_h":"ふくおか","name_e":"fukuoka"}]
+[{"bank_code":"0423","code":"001","name":"東京","name_k":"トウキヨウ","name_h":"とうきよう","name_e":"toukiyou"},{"bank_code":"0423","code":"002","name":"大阪","name_k":"オオサカ","name_h":"おおさか","name_e":"oosaka"},{"bank_code":"0423","code":"003","name":"福岡出張所","name_k":"フクオカ","name_h":"ふくおか","name_e":"fukuoka"}]
