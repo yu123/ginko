@@ -1,7 +1,7 @@
 require 'json'
-require 'jp_bank/name_query'
-require 'jp_bank/branch'
-module JpBank
+require 'ginko/name_query'
+require 'ginko/branch'
+module Ginko
   class BranchMap
     include NameQuery
     def initialize(bank_code)

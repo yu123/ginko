@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-RSpec.describe JpBank::Branch do
-  let(:bank) { JpBank::Bank.find('0009') }
+RSpec.describe Ginko::Branch do
+  let(:bank) { Ginko::Bank.find('0009') }
   let(:branch) { bank.branches.search('新宿').first }
   describe 'attributes' do
     context 'valid bank' do

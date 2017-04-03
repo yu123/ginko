@@ -1,8 +1,10 @@
-# JpBank
-
+# Ginko
 A library to search Japanese banks and branches for Ruby
 
-[![Build Status](https://travis-ci.org/yu123/jp-bank.png)](https://travis-ci.org/yu123/jp-bank)
+[![Build Status](https://travis-ci.org/yu123/ginko.png)](https://travis-ci.org/yu123/ginko)
+
+## Renamed
+Previously called `ginko`
 
 ## Feature
 - comprehensive list of Japanese banks and their branches
@@ -13,7 +15,7 @@ A library to search Japanese banks and branches for Ruby
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jp-bank'
+gem 'ginko'
 ```
 
 And then execute:
@@ -22,27 +24,27 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install jp-bank
+    $ gem install ginko
 
 ## Usage
 ### search banks
 ```ruby
-JpBank::Bank.search('みつい')
-# => [#<JpBank::Bank:0x007fcd9570eb48 @code="0009", @name="三井住友", @name_e="mitsuisumitomo", @name_h="みついすみとも", @name_k="ミツイスミトモ">,
- #<JpBank::Bank:0x007fcd9570ead0 @code="0294", @name="三井住友信託", @name_e="mitsuisumitomoshintaku", @name_h="みついすみともしんたく", @name_k="ミツイスミトモシンタク">,
- #<JpBank::Bank:0x007fcd9570eaa8 @code="3126", @name="みついし農協", @name_e="mitsuishinoukiyou", @name_h="みついしのうきよう", @name_k="ミツイシノウキヨウ">]
+Ginko::Bank.search('みつい')
+# => [#<Ginko::Bank:0x007fcd9570eb48 @code="0009", @name="三井住友", @name_e="mitsuisumitomo", @name_h="みついすみとも", @name_k="ミツイスミトモ">,
+ #<Ginko::Bank:0x007fcd9570ead0 @code="0294", @name="三井住友信託", @name_e="mitsuisumitomoshintaku", @name_h="みついすみともしんたく", @name_k="ミツイスミトモシンタク">,
+ #<Ginko::Bank:0x007fcd9570eaa8 @code="3126", @name="みついし農協", @name_e="mitsuishinoukiyou", @name_h="みついしのうきよう", @name_k="ミツイシノウキヨウ">]
 
 ```
 
 ### find bank
 ```ruby
-JpBank::Bank.find('9900')
-# => #<JpBank::Bank:0x007fcd956954c8 @code="9900", @name="ゆうちょ", @name_e="yuuchiyo", @name_h="ゆうちよ", @name_k="ユウチヨ">
+Ginko::Bank.find('9900')
+# => #<Ginko::Bank:0x007fcd956954c8 @code="9900", @name="ゆうちょ", @name_e="yuuchiyo", @name_h="ゆうちよ", @name_k="ユウチヨ">
 ```
 
 ### search branches
 ```ruby
-bank = JpBank::Bank.find('0009')
+bank = Ginko::Bank.find('0009')
 bank.branches.search('新宿')
 # => [{"code"=>"221", "name"=>"新宿", "name_k"=>"シンジユク", "name_h"=>"しんじゆく", "name_e"=>"shinjiyuku"},{"code"=>"259", "name"=>"新宿西口", "name_k"=>"シンジユクニシグチ", "name_h"=>"しんじゆくにしぐち", "name_e"=>"shinjiyukunishiguchi"},{"code"=>"661", "name"=>"新宿通", "name_k"=>"シンジユクドオリ", "name_h"=>"しんじゆくどおり", "name_e"=>"shinjiyukudoori"}]
 ```
@@ -55,7 +57,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/yu123/jp-bank. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/yu123/ginko. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

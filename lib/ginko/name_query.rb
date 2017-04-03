@@ -1,4 +1,4 @@
-module JpBank
+module Ginko
   module NameQuery
 
     def search(query, options={})

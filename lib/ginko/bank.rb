@@ -1,7 +1,7 @@
 require 'json'
-require 'jp_bank/bank_map'
-require 'jp_bank/branch_map'
-module JpBank
+require 'ginko/bank_map'
+require 'ginko/branch_map'
+module Ginko
   class Bank
     attr_reader :name, :name_e, :name_h, :name_k, :name_kana, :code
     def initialize(bank_hash={})

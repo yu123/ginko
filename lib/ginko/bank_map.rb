@@ -1,6 +1,6 @@
 require 'json'
-require 'jp_bank/name_query'
-module JpBank
+require 'ginko/name_query'
+module Ginko
   class BankMap
     include NameQuery
     load_path = File.join(File.dirname(__FILE__), '../../data/banks.json')
