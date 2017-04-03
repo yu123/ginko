@@ -4,7 +4,7 @@ A library to search Japanese banks and branches for Ruby
 [![Build Status](https://travis-ci.org/yu123/ginko.png)](https://travis-ci.org/yu123/ginko)
 
 ## Renamed
-Previously called `ginko`
+Previously called `jp-bank`
 
 ## Feature
 - comprehensive list of Japanese banks and their branches
@@ -45,7 +45,9 @@ Ginko::Bank.find('9900')
 ```ruby
 bank = Ginko::Bank.find('0009')
 bank.branches.search('新宿')
-# => [{"code"=>"221", "name"=>"新宿", "name_k"=>"シンジユク", "name_h"=>"しんじゆく", "name_e"=>"shinjiyuku"},{"code"=>"259", "name"=>"新宿西口", "name_k"=>"シンジユクニシグチ", "name_h"=>"しんじゆくにしぐち", "name_e"=>"shinjiyukunishiguchi"},{"code"=>"661", "name"=>"新宿通", "name_k"=>"シンジユクドオリ", "name_h"=>"しんじゆくどおり", "name_e"=>"shinjiyukudoori"}]
+# => [#<Ginko::Branch:0x007ff4463e87e8 @bank_code="0009", @code="221", @name="新宿", @name_e="shinjiyuku", @name_h="しんじゆく", @name_k="シンジユク", @routing_number="0009221">,
+ #<Ginko::Branch:0x007ff4463e8798 @bank_code="0009", @code="259", @name="新宿西口", @name_e="shinjiyukunishiguchi", @name_h="しんじゆくにしぐち", @name_k="シンジユクニシグチ", @routing_number="0009259">,
+ #<Ginko::Branch:0x007ff4463e8748 @bank_code="0009", @code="661", @name="新宿通", @name_e="shinjiyukudoori", @name_h="しんじゆくどおり", @name_k="シンジユクドオリ", @routing_number="0009661">]
 ```
 
 ## Development
